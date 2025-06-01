@@ -1,0 +1,35 @@
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+
+    <description>Detecta métodos privados e públicos</description>
+
+    <rule name="PrivateMethod"
+          language="java"
+          message="Private method detected"
+          class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+        <priority>5</priority>
+        <properties>
+            <property name="xpath">
+                <value>
+                    //MethodDeclaration[@Visibility='private']
+                </value>
+            </property>
+        </properties>
+    </rule>
+
+    <rule name="PublicMethod"
+          language="java"
+          message="Public method detected"
+          class="net.sourceforge.pmd.lang.rule.xpath.XPathRule">
+        <priority>5</priority>
+        <properties>
+            <property name="xpath">
+                <value>
+                    //MethodDeclaration[@Visibility='public']
+                </value>
+            </property>
+        </properties>
+    </rule>
+</ruleset>
