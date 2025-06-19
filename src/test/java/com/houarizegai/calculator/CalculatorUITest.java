@@ -239,6 +239,32 @@ class CalculatorUIButtonTest {
     }
 
     @Test
+    void testBigdecimal() {
+        JButton btn0 = getButtonByText("0");
+        JButton btnDot = getButtonByText(".");
+        JButton btn1 = getButtonByText("1");
+        JButton btnAdd = getButtonByText("+");
+        JButton btn0_1 = getButtonByText("0");
+        JButton btnDot2 = getButtonByText(".");
+        JButton btn2 = getButtonByText("2");
+        JButton btnEqual = getButtonByText("=");
+
+        // Simulate button clicks
+        btn0.doClick();
+        btnDot.doClick();
+        btn1.doClick();
+        btnAdd.doClick();
+        btn0_1.doClick();
+        btnDot2.doClick();
+        btn2.doClick();
+        btnEqual.doClick();
+
+        JTextField display = getDisplay();
+        assertEquals("0.3", display.getText());
+
+    }
+
+    @Test
     void testNegativeSquareRoot() {
         JButton btnNeg = getButtonByText("-");
         JButton btn4 = getButtonByText("4");
